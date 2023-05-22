@@ -1,16 +1,15 @@
-export const teamNameFetchApi = async () => {
-  try {
-    const response = await fetch({
-      method: "GET",
-      url: "https://cricbuzz-cricket.p.rapidapi.com/teams/v1/international",
-      headers: {
-        "X-RapidAPI-Key": "6b05ecea36msh09c96e711c866dep1b42b0jsn14d8613e7884",
-        "X-RapidAPI-Host": "cricbuzz-cricket.p.rapidapi.com",
-      },
-    });
-    console.log(await response.json());
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
+import axios from "axios";
+import {
+  setTeamsDataSuccess,
+  setTeamsDataFailed,
+} from "../store/teams/teams.action";
+import { teamsDataUrl } from "./apiUrl.api";
+export const teamNameFetchApi = async (dispatch) => {
+  const response = await axios.get(teamsDataUrl);
+  const data = await response.data;
+  if (response.status === 200) {
+    dispatch(setTeamsDataSuccess(data));
   }
+
+  return data;
 };
