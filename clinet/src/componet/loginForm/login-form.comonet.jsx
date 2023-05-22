@@ -1,33 +1,40 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import FormInput from "../FormInput/form-input.componet";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { loginFetchApi } from "../../api/login.api";
 const intialUserData = {
   useremail: "",
   password: "",
 };
 const LoginForm = () => {
   const [userData, setUserData] = useState(intialUserData);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleChange = (e) => {
     const { value, name } = e.target;
 
     setUserData({ ...userData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!userData.useremail || !userData.password) {
       if (!userData.useremail) {
         toast.error("Pleace,Enter Name", {
-          position: toast.POSITION.TOP_LEFT,
+          position: toast.POSITION.TOP_RIGHT,
         });
       }
       if (!userData.password) {
         toast.error("Pleace,Enter Email", {
-          position: toast.POSITION.TOP_LEFT,
+          position: toast.POSITION.TOP_RIGHT,
         });
       }
     } else {
-      console.log(userData);
+      await loginFetchApi(userData, dispatch);
+      setUserData(intialUserData);
+      navigate("/home");
     }
   };
 

@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import FormInput from "../FormInput/form-input.componet";
 import { toast } from "react-toastify";
-import axios from "axios";
+import { registrationFetchApi } from "../../api/registration.api";
 const inialState = {
   username: "",
   useremail: "",
@@ -10,6 +12,8 @@ const inialState = {
 };
 const RegistrationForm = () => {
   const [userDeatils, setUserDeatils] = useState(inialState);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserDeatils({ ...userDeatils, [name]: value });
@@ -28,45 +32,41 @@ const RegistrationForm = () => {
     ) {
       if (!username) {
         toast.error("Pleace,Enter Name", {
-          position: toast.POSITION.TOP_LEFT,
+          position: toast.POSITION.TOP_RIGHT,
         });
       }
       if (!useremail || !useremail.match(validRegex)) {
         if (!useremail) {
           toast.error("Pleace,Enter Email", {
-            position: toast.POSITION.TOP_LEFT,
+            position: toast.POSITION.TOP_RIGHT,
           });
         }
         if (!useremail.match(validRegex)) {
           toast.error("Enter Vailed Email", {
-            position: toast.POSITION.TOP_LEFT,
+            position: toast.POSITION.TOP_RIGHT,
           });
         }
       }
       if (!password) {
         toast.error("Pleace,Enter Password", {
-          position: toast.POSITION.TOP_LEFT,
+          position: toast.POSITION.TOP_RIGHT,
         });
       }
       if (!confirmpassword) {
         toast.error("Pleace,Enter Confirm Password", {
-          position: toast.POSITION.TOP_LEFT,
+          position: toast.POSITION.TOP_RIGHT,
         });
       }
     } else {
       if (!(password === confirmpassword)) {
         toast.error("Password Doesn't Match", {
-          position: toast.POSITION.TOP_LEFT,
+          position: toast.POSITION.TOP_RIGHT,
         });
       } else {
         const { confirmpassword, ...userData } = userDeatils;
-        const data = await fetch("http://localhost:5000/api/auth/register", {
-          method: "POST",
-          body: JSON.stringify(userData),
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        }).then((response) => response.json());
+        await registrationFetchApi(userData, dispatch);
+        setUserDeatils(inialState);
+        navigate("/home");
       }
     }
   };

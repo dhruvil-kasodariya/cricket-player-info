@@ -11,9 +11,7 @@ const app = express();
 dotenv.config();
 
 mongoose
-  .connect(
-    "mongodb+srv://dppatel8458:n5FDPf2jRdLH1Diy@cluster0.gltwjmh.mongodb.net/user?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("Database Connect successfully"))
   .catch((err) => console.log(err));
 app.use(cors());
