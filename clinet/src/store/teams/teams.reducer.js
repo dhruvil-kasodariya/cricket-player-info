@@ -15,13 +15,13 @@ export const teamsReducer = (state = INITIAL_STATE, action) => {
         ...state,
         teamsData: payload,
       };
-    case TEAMS_ACTION_TYPE.FETCH_TEAM_DATA_SUCCESS:
+    case TEAMS_ACTION_TYPE.FATCH_TEAM_DATA_SUCCESS:
       return {
         ...state,
         teamData: payload,
       };
-    case TEAMS_ACTION_TYPE.FETCH_TEAMS_DATA_FAILED:
-    case TEAMS_ACTION_TYPE.FETCH_TEAM_DATA_FAILED:
+    case TEAMS_ACTION_TYPE.FATCH_TEAMS_DATA_FAILED:
+    case TEAMS_ACTION_TYPE.FATCH_TEAM_DATA_FAILED:
       return {
         ...state,
         error: payload,

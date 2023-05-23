@@ -16,9 +16,11 @@ export const TeamsPreviewCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  background-image: url(${(props) => props.imgUrl});
+  background-size: cover; /* Adjust this property as needed */
+  background-repeat: no-repeat;
+  background-position: center;
   h5 {
     margin-bottom: 5px;
   }
 `;
-//backgroundImage: `url(${team.imageUrl})`
