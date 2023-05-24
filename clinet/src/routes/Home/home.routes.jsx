@@ -5,6 +5,7 @@ import { selectTeamsData } from "../../store/teams/teams.selector";
 import { useNavigate } from "react-router-dom";
 import { teamNameFetchApi } from "../../api/teamNames.api";
 import TeamsPreview from "../../componet/TeamsPreview/teams-preview.componet.jsx";
+import NavBar from "../../componet/navBar/navBar.componet";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,7 +17,12 @@ const Home = () => {
     teamNameFetchApi(dispatch);
   }, [dispatch]);
 
-  return <TeamsPreview teamsData={teamsData} />;
+  return (
+    <>
+      <NavBar />
+      <TeamsPreview teamsData={teamsData} />
+    </>
+  );
 };
 
 export default Home;

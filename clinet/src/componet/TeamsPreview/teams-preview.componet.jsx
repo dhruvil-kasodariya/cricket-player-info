@@ -7,7 +7,7 @@ const TeamsPreview = ({ teamsData }) => {
   const dispatch = useDispatch();
   const handleClick = (team) => {
     dispatch(setTeamDataSuccess(team));
-    navigate(`/teams/${team.teamId}`);
+    navigate(`/teams/${team.teamName}`);
   };
   return (
     <TeamsPreviewContainer>

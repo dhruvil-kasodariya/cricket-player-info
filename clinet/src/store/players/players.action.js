@@ -12,3 +12,36 @@ export const setplayerDataSuccess = (playerData) =>
 
 export const setplayerDataFailed = (error) =>
   createAction(PLAYERS_ACTION_TYPE.FATCH_PLAYER_DATA_FAILED, error);
+
+export const setplayertInfoDataSuccess = (playerInfoData) =>
+  createAction(
+    PLAYERS_ACTION_TYPE.FATCH_PLAYER_INFO_DATA_SUCCESS,
+    playerInfoData
+  );
+
+export const setplayertInfoDataFailed = (error) =>
+  createAction(PLAYERS_ACTION_TYPE.FATCH_PLAYER_INFO_DATA_SUCCESS, error);
+
+export const setplayerBattingStateDataSuccess = (playerBattingStateData) =>
+  createAction(
+    PLAYERS_ACTION_TYPE.FATCH_PLAYER_BATTING_STATE_DATA_SUCCESS,
+    playerBattingStateData
+  );
+
+export const setplayertBattingStateDataFailed = (error) =>
+  createAction(
+    PLAYERS_ACTION_TYPE.FATCH_PLAYER_BATTING_STATE_DATA_FAILED,
+    error
+  );
+
+export const setplayerBowlingStateDataSuccess = (playerBowlingStateData) =>
+  createAction(
+    PLAYERS_ACTION_TYPE.FATCH_PLAYER_BOWLING_STATE_DATA_SUCCESS,
+    playerBowlingStateData
+  );
+
+export const setplayertBowlingStateDataFailed = (error) =>
+  createAction(
+    PLAYERS_ACTION_TYPE.FATCH_PLAYER_BOWLING_STATE_DATA_FAILED,
+    error
+  );

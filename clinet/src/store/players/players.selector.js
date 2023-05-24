@@ -10,3 +10,18 @@ export const selectPlayerData = createSelector(
   [selectPlayersDataObj],
   (playersDataObjSlice) => playersDataObjSlice.playerData
 );
+
+export const selectPlayerInfoData = createSelector(
+  [selectPlayersDataObj],
+  (playersDataObjSlice) => playersDataObjSlice.playerInfo
+);
+
+export const selectPlayerBattingStateData = createSelector(
+  [selectPlayersDataObj],
+  (playersDataObjSlice) => playersDataObjSlice.playerBattingState
+);
+
+export const selectPlayerBowlingStateData = createSelector(
+  [selectPlayersDataObj],
+  (playersDataObjSlice) => playersDataObjSlice.playerBowlingState
+);
