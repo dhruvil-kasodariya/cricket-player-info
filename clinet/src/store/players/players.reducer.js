@@ -6,6 +6,8 @@ const INITIAL_STATE = {
   playerInfo: {},
   playerBattingState: {},
   playerBowlingState: {},
+  playerSearchString: "",
+  playerFilterOption: "",
   error: null,
 };
 
@@ -37,6 +39,16 @@ export const playersReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         playerBowlingState: payload,
+      };
+    case PLAYERS_ACTION_TYPE.SET_PLAYER_SEARCH_STRING:
+      return {
+        ...state,
+        playerSearchString: payload,
+      };
+    case PLAYERS_ACTION_TYPE.SET_PLAYER_FILTER_OPTION:
+      return {
+        ...state,
+        playerFilterOption: payload,
       };
     case PLAYERS_ACTION_TYPE.FATCH_PLAYERS_DATA_FAILED:
     case PLAYERS_ACTION_TYPE.FATCH_PLAYER_DATA_FAILED:

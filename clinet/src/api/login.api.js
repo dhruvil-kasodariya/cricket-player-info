@@ -1,7 +1,8 @@
 import { loginUrl } from "./apiUrl.api";
 import { signInSuccess, signInFailed } from "../store/user/user.action";
+import { toast } from "react-toastify";
 
-export const loginFetchApi = async (userData, dispatch) => {
+export const loginFetchApi = async (userData, dispatch, navigate) => {
   const data = await fetch(loginUrl, {
     method: "POST",
     headers: {
@@ -13,8 +14,10 @@ export const loginFetchApi = async (userData, dispatch) => {
       let temp = await response.json();
       if (response.status === 200) {
         dispatch(signInSuccess(temp));
+        navigate("/home");
         return temp;
       }
+      toast.error(temp.messege);
       dispatch(signInFailed(temp));
       return false;
     })

@@ -32,9 +32,8 @@ const LoginForm = () => {
         });
       }
     } else {
-      await loginFetchApi(userData, dispatch);
+      await loginFetchApi(userData, dispatch, navigate);
       setUserData(intialUserData);
-      navigate("/home");
     }
   };
 

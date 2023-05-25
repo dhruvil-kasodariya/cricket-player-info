@@ -25,3 +25,13 @@ export const selectPlayerBowlingStateData = createSelector(
   [selectPlayersDataObj],
   (playersDataObjSlice) => playersDataObjSlice.playerBowlingState
 );
+
+export const selectPlayerSearchString = createSelector(
+  [selectPlayersDataObj],
+  (playersDataObjSlice) => playersDataObjSlice.playerSearchString
+);
+
+export const selectPlayerFilterOption = createSelector(
+  [selectPlayersDataObj],
+  (playersDataObjSlice) => playersDataObjSlice.playerFilterOption
+);

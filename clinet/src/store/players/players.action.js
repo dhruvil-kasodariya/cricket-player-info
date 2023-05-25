@@ -45,3 +45,9 @@ export const setplayertBowlingStateDataFailed = (error) =>
     PLAYERS_ACTION_TYPE.FATCH_PLAYER_BOWLING_STATE_DATA_FAILED,
     error
   );
+
+export const setplayerSearchString = (searchString) =>
+  createAction(PLAYERS_ACTION_TYPE.SET_PLAYER_SEARCH_STRING, searchString);
+
+export const setPlayerFilterOption = (option) =>
+  createAction(PLAYERS_ACTION_TYPE.SET_PLAYER_FILTER_OPTION, option);

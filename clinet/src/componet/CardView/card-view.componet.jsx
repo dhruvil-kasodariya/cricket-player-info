@@ -5,13 +5,13 @@ const CardView = ({ player }) => {
     <div id="cards">
       <figure
         className={
-          role === "BATSMEN"
+          role === "Batsman"
             ? "card card--fire"
-            : role === "ALL ROUNDER"
+            : role === "All-rounder"
             ? "card card--water"
-            : role === "WICKET KEEPER"
+            : role === "Wicket keeper"
             ? "card card--normal"
-            : role === "BOWLER"
+            : role === "Bowler"
             ? "card card--grass"
             : "card card--ice"
         }
