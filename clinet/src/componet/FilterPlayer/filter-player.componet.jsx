@@ -3,10 +3,10 @@ import MySelect from "../select/select.componet";
 import { useDispatch } from "react-redux";
 import { setPlayerFilterOption } from "../../store/players/players.action";
 const filertOption = [
-  { value: "batsmen", label: "BATSMEN" },
-  { value: "wk", label: "WICKET KEEPER" },
-  { value: "allRounder", label: "ALL ROUNDER" },
-  { value: "bowler", label: "BOWLER" },
+  { value: "Batsman", label: "BATSMAN" },
+  { value: "Wicket Keeper", label: "WICKET KEEPER" },
+  { value: "All-rounder", label: "ALL ROUNDER" },
+  { value: "Bowler", label: "BOWLER" },
 ];
 
 const FilterPlayerSelect = () => {

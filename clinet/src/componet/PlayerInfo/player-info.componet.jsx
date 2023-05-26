@@ -13,6 +13,7 @@ import {
   getPlayerBowlingStateApi,
   getPlayerInfoApi,
 } from "../../api/playerInfo.api";
+import Loader from "../Loader/loader.componet";
 // import {
 //   playerBattingState,
 //   playerBowingState,
@@ -42,14 +43,16 @@ const PlayerInfo = () => {
   return (
     <div>
       {Object.keys(playerInformation).length &&
-        Object.keys(playerBattingState).length &&
-        Object.keys(playerBowingState).length && (
-          <PlayerInfoCard
-            playerInformation={playerInformation}
-            playerBattingState={playerBattingState}
-            playerBowingState={playerBowingState}
-          />
-        )}
+      Object.keys(playerBattingState).length &&
+      Object.keys(playerBowingState).length ? (
+        <PlayerInfoCard
+          playerInformation={playerInformation}
+          playerBattingState={playerBattingState}
+          playerBowingState={playerBowingState}
+        />
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

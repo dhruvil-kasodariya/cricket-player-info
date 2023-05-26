@@ -13,7 +13,6 @@ import {
 } from "../../store/players/players.selector";
 
 const PlayerList = () => {
-  // const [data, setData] = useState([]);
   const [playerSearchFilterData, setPlayerSearchFilterData] = useState([]);
   const [playerOptionFilterData, setPlayerOptionFilterData] = useState([]);
   const searchPlayerString = useSelector(selectPlayerSearchString);
@@ -24,12 +23,12 @@ const PlayerList = () => {
   const team = useSelector(selectTeamData);
   const data = useSelector(selectPlayersData);
 
-  // const data = dataSelect.filter((player) => player.imageId !== 174146);
   useEffect(() => {
     getTeamPlayersApi(team.teamId, dispatch);
   }, []);
 
   useEffect(() => {
+    console.log(data);
     if (data.length) {
       const filterData = data.filter((player) =>
         player.name.includes(searchPlayerString)
@@ -39,12 +38,13 @@ const PlayerList = () => {
   }, [searchPlayerString, data]);
 
   useEffect(() => {
+    console.log(playerSearchFilterData);
     if (playerSearchFilterData.length) {
       if (!optionPlayer) {
         setPlayerOptionFilterData(playerSearchFilterData);
       } else {
         const optionData = playerSearchFilterData.filter((player) =>
-          player.role.match(optionPlayer.label)
+          player.role.match(optionPlayer.value)
         );
         setPlayerOptionFilterData(optionData);
       }
@@ -71,6 +71,3 @@ const PlayerList = () => {
 };
 
 export default PlayerList;
-
-// const players = indiaTeam.filter((player) => player.imageId !== 174146);
-// setData(players);

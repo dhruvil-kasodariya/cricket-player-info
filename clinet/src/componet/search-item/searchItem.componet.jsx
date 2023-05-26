@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SearchBoxComponent from "../search-box/searchBox.component";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setplayerSearchString } from "../../store/players/players.action";
 
 const SearchItem = () => {

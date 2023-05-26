@@ -12,14 +12,13 @@ const TeamsPreview = ({ teamsData }) => {
   return (
     <TeamsPreviewContainer>
       {teamsData.map((team) => (
-        <TeamsPreviewCard
-          key={team._id}
-          imgUrl={team.imageUrl}
-          onClick={() => handleClick(team)}
-        >
-          <span>{team.teamSName}</span>
-          <h5>{team.teamName}</h5>
-        </TeamsPreviewCard>
+        <>
+          <TeamsPreviewCard
+            key={team._id}
+            imgUrl={team.imageUrl}
+            onClick={() => handleClick(team)}
+          ></TeamsPreviewCard>
+        </>
       ))}
     </TeamsPreviewContainer>
   );

@@ -25,25 +25,4 @@ export const SearchBox = styled.div`
     box-sizing: border-box;
     font-family: "Sedgwick Ave Display", cursive;
   }
-
-  /* button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    svg {
-      width: 24px;
-      height: 24px;
-      fill: #333333;
-      transition: fill 0.2s ease-in-out;
-    }
-
-    &:hover svg {
-      fill: #0069d9;
-    }
-  } */
 `;

@@ -5,7 +5,8 @@ const dotenv = require("dotenv");
 const cors = require("cors");
 const methodOverride = require("method-override");
 const authRoute = require("./routes/auth");
-const cricketTeamName = require("./routes/cricketTeamName");
+const cricketTeamNameRoute = require("./routes/cricketTeamName");
+const teamsPlayersRoute = require("./routes/TeamsPlayers");
 
 const app = express();
 
@@ -21,7 +22,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("X-HTTP-Method-Override"));
 
 app.use("/api/auth", authRoute);
-app.use("/api/teamName", cricketTeamName);
+app.use("/api/teamName", cricketTeamNameRoute);
+app.use("/api/teamsPlayers", teamsPlayersRoute);
 
 app.listen(5000, () => {
   console.log("server running at 5000");

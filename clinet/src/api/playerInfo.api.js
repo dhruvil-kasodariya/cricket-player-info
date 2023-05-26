@@ -7,16 +7,16 @@ import {
   setplayertBattingStateDataFailed,
   setplayertBowlingStateDataFailed,
 } from "../store/players/players.action";
-export const key1 = "5fe94861c7msh0a9ce1add0bb8bdp1771b1jsn5675709465d7";
-export const key2 = "6b05ecea36msh09c96e711c866dep1b42b0jsn14d8613e7884";
-export const key3 = "a5b2a2e8f0mshae3ff1fae75dc84p115ebejsn89dab5e8f5ca";
+export const key1 = process.env.REACT_APP_API_KEY1;
+export const key2 = process.env.REACT_APP_API_KEY2;
+export const key3 = process.env.REACT_APP_API_KEY3;
 
 export const getPlayerInfoApi = async (id, dispatch) => {
   const options = {
     method: "GET",
     url: `https://cricbuzz-cricket.p.rapidapi.com/stats/v1/player/${id}`,
     headers: {
-      "X-RapidAPI-Key": key3,
+      "X-RapidAPI-Key": key1,
       "X-RapidAPI-Host": "cricbuzz-cricket.p.rapidapi.com",
     },
   };
@@ -37,7 +37,7 @@ export const getPlayerBattingStateApi = async (id, dispatch) => {
     method: "GET",
     url: `https://cricbuzz-cricket.p.rapidapi.com/stats/v1/player/${id}/batting`,
     headers: {
-      "X-RapidAPI-Key": key3,
+      "X-RapidAPI-Key": key1,
       "X-RapidAPI-Host": "cricbuzz-cricket.p.rapidapi.com",
     },
   };
@@ -59,7 +59,7 @@ export const getPlayerBowlingStateApi = async (id, dispatch) => {
     method: "GET",
     url: `https://cricbuzz-cricket.p.rapidapi.com/stats/v1/player/${id}/bowling`,
     headers: {
-      "X-RapidAPI-Key": key3,
+      "X-RapidAPI-Key": key1,
       "X-RapidAPI-Host": "cricbuzz-cricket.p.rapidapi.com",
     },
   };

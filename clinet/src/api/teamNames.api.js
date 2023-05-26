@@ -9,6 +9,8 @@ export const teamNameFetchApi = async (dispatch) => {
   const data = await response.data;
   if (response.status === 200) {
     dispatch(setTeamsDataSuccess(data));
+  } else {
+    dispatch(setTeamsDataFailed(response));
   }
 
   return data;

@@ -24,6 +24,5 @@ export const loginFetchApi = async (userData, dispatch, navigate) => {
     .catch((e) => {
       console.log(e);
     });
-  // console.log(await data.json());
   return data;
 };
