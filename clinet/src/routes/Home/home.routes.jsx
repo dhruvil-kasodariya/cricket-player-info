@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectTeamsData } from "../../store/teams/teams.selector";
 import { teamNameFetchApi } from "../../api/teamNames.api";
 import TeamsPreview from "../../componet/TeamsPreview/teams-preview.componet.jsx";
+import Footer from "../../componet/Footer/footer.componet";
+import NavBar from "../../componet/navBar/navBar.componet";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -14,7 +16,9 @@ const Home = () => {
 
   return (
     <Fragment>
+      <NavBar />
       <TeamsPreview teamsData={teamsData} />
+      <Footer />
     </Fragment>
   );
 };

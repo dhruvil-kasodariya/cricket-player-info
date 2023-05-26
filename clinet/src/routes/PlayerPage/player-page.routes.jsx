@@ -1,10 +1,13 @@
-import { Routes, Route } from "react-router-dom";
+import Footer from "../../componet/Footer/footer.componet";
+import NavBar from "../../componet/navBar/navBar.componet";
 import PlayerList from "../../componet/PlayersList/player-list.componet";
 const PlayersPage = () => {
   return (
-    <Routes>
-      <Route path=":teamId" element={<PlayerList />} />
-    </Routes>
+    <>
+      <NavBar />
+      <PlayerList />
+      <Footer />
+    </>
   );
 };
 

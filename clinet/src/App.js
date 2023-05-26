@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import Home from "./routes/Home/home.routes";
 import PlayersPage from "./routes/PlayerPage/player-page.routes";
-import PlayerInfo from "./componet/PlayerInfo/player-info.componet";
+import PlayerDeatials from "./routes/PlayerDeatils/playerDeatials.routes";
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
           <Route path={path} element={<Auth />} key={index} />
         ))}
         <Route path="/home" element={<Home />} />
-        <Route path="/teams/*" element={<PlayersPage />} />
-        <Route path="/playerinfo" element={<PlayerInfo />} />
+        <Route path="/playersList" element={<PlayersPage />} />
+        <Route path="/playerinfo" element={<PlayerDeatials />} />
       </Routes>
       <ToastContainer />
     </Fragment>

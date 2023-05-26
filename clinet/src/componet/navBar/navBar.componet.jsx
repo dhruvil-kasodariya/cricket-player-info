@@ -1,26 +1,27 @@
 import { Fragment } from "react";
+import { useLocation } from "react-router-dom";
 import FilterPlayerSelect from "../FilterPlayer/filter-player.componet";
 import SearchItem from "../search-item/searchItem.componet";
-import {
-  NavigationContainer,
-  NavLinkContainer,
-  NavLink,
-  LogoContainer,
-} from "./navBar.style";
+import { NavigationContainer, NavLinkContainer, NavLink } from "./navBar.style";
 
 const NavBar = () => {
+  const location = useLocation();
   return (
     <Fragment>
       <NavigationContainer>
-        <LogoContainer to="/"></LogoContainer>
         <h1>CricPlayerSpotlight</h1>
         <NavLinkContainer>
-          <NavLink>
-            <SearchItem />
-          </NavLink>
-          <NavLink>
-            <FilterPlayerSelect />
-          </NavLink>
+          {location.pathname === "/playersList" && (
+            <>
+              {" "}
+              <NavLink>
+                <SearchItem />
+              </NavLink>
+              <NavLink>
+                <FilterPlayerSelect />
+              </NavLink>
+            </>
+          )}
         </NavLinkContainer>
       </NavigationContainer>
     </Fragment>

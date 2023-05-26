@@ -6,7 +6,6 @@ import { setplayerDataSuccess } from "../../store/players/players.action";
 import { selectTeamData } from "../../store/teams/teams.selector";
 import getTeamPlayersApi from "../../api/teamPlayer.api";
 import CardView from "../CardView/card-view.componet";
-import NavBar from "../navBar/navBar.componet";
 import {
   selectPlayerSearchString,
   selectPlayerFilterOption,
@@ -29,7 +28,6 @@ const PlayerList = () => {
   }, []);
 
   useEffect(() => {
-    console.log(data);
     if (data.length) {
       const filterData = data.filter((player) =>
         player.name.includes(searchPlayerString)
@@ -39,7 +37,6 @@ const PlayerList = () => {
   }, [searchPlayerString, data]);
 
   useEffect(() => {
-    console.log(playerSearchFilterData);
     if (playerSearchFilterData.length) {
       if (!optionPlayer) {
         setPlayerOptionFilterData(playerSearchFilterData);
@@ -59,7 +56,6 @@ const PlayerList = () => {
 
   return (
     <div>
-      <NavBar />
       {playerOptionFilterData.length ? (
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
           {playerOptionFilterData.map((player) => (

@@ -6,7 +6,6 @@ import {
   selectPlayerBattingStateData,
   selectPlayerBowlingStateData,
 } from "../../store/players/players.selector";
-import { useState } from "react";
 import { useEffect } from "react";
 import {
   getPlayerBattingStateApi,
@@ -14,17 +13,9 @@ import {
   getPlayerInfoApi,
 } from "../../api/playerInfo.api";
 import Loader from "../Loader/loader.componet";
-// import {
-//   playerBattingState,
-//   playerBowingState,
-//    playerInformation,
-// } from "../../data";
+import NavBar from "../navBar/navBar.componet";
 
 const PlayerInfo = () => {
-  //   const [playerInformation, setPlayerInformation] = useState("");
-  //   const [playerBattingState, setPlayerBattingState] = useState("");
-  //   const [playerBowingState, setPlayerBowingState] = useState("");
-
   const player = useSelector(selectPlayerData);
   const playerInformation = useSelector(selectPlayerInfoData);
   const playerBattingState = useSelector(selectPlayerBattingStateData);
