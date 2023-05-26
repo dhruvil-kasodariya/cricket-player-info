@@ -1,7 +1,7 @@
 import { registerUrl } from "./apiUrl.api";
 import { signUpSuccess, signUpFailed } from "../store/user/user.action";
 
-export const registrationFetchApi = async (userData, dispatch) => {
+export const registrationFetchApi = async (userData, dispatch, navigate) => {
   const data = await fetch(registerUrl, {
     method: "POST",
     body: JSON.stringify(userData),
@@ -13,6 +13,7 @@ export const registrationFetchApi = async (userData, dispatch) => {
       let temp = await response.json();
       if (response.status === 201) {
         dispatch(signUpSuccess(temp));
+        navigate("/home");
         return temp;
       }
       dispatch(signUpFailed(temp));

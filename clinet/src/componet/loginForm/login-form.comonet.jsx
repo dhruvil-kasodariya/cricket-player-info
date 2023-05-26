@@ -63,9 +63,15 @@ const LoginForm = () => {
           <span></span>
           <span></span>
           Sign-In
+        </button>{" "}
+        <button onClick={onNewUserClick}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          New User
         </button>
       </form>
-      <span onClick={onNewUserClick}>New User</span>
     </div>
   );
 };

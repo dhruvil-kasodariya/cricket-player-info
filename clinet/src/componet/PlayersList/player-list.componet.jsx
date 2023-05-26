@@ -11,6 +11,7 @@ import {
   selectPlayerSearchString,
   selectPlayerFilterOption,
 } from "../../store/players/players.selector";
+import Loader from "../Loader/loader.componet";
 
 const PlayerList = () => {
   const [playerSearchFilterData, setPlayerSearchFilterData] = useState([]);
@@ -59,13 +60,17 @@ const PlayerList = () => {
   return (
     <div>
       <NavBar />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
-        {playerOptionFilterData.map((player) => (
-          <div key={player.id} onClick={() => handleClickPlayer(player)}>
-            <CardView player={player} />
-          </div>
-        ))}
-      </div>
+      {playerOptionFilterData.length ? (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)" }}>
+          {playerOptionFilterData.map((player) => (
+            <div key={player.id} onClick={() => handleClickPlayer(player)}>
+              <CardView player={player} />
+            </div>
+          ))}
+        </div>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

@@ -64,11 +64,13 @@ const RegistrationForm = () => {
         });
       } else {
         const { confirmpassword, ...userData } = userDeatils;
-        await registrationFetchApi(userData, dispatch);
+        await registrationFetchApi(userData, dispatch, navigate);
         setUserDeatils(inialState);
-        navigate("/home");
       }
     }
+  };
+  const signInClick = () => {
+    navigate("/login");
   };
 
   return (
@@ -105,6 +107,13 @@ const RegistrationForm = () => {
           <span></span>
           <span></span>
           Sign-Up
+        </button>{" "}
+        <button onClick={signInClick}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Sign-In
         </button>
       </form>
     </div>
