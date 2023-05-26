@@ -37,6 +37,10 @@ const LoginForm = () => {
     }
   };
 
+  const onNewUserClick = () => {
+    navigate("/registration");
+  };
+
   return (
     <div className="login-box">
       <h2>Login</h2>
@@ -61,6 +65,7 @@ const LoginForm = () => {
           Sign-In
         </button>
       </form>
+      <span onClick={onNewUserClick}>New User</span>
     </div>
   );
 };
