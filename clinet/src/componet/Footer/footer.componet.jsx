@@ -25,17 +25,18 @@ const Footer = () => {
             </a>
           </li>
           <li className="social-icon__item">
-            <a className="social-icon__link" href="#">
+            <a className="social-icon__link" href="https://twitter.com/DhruvilKas69201?t=reEVPLRo-FMtXJGFVCIy6A&s=09
+">
               <FiTwitter />
             </a>
           </li>
           <li className="social-icon__item">
-            <a className="social-icon__link" href="#">
+            <a className="social-icon__link" href="https://linkedin.com/in/dhruvil-kasodariya-968309213">
               <FiLinkedin />
             </a>
           </li>
           <li className="social-icon__item">
-            <a className="social-icon__link" href="#">
+            <a className="social-icon__link" href="https://instagram.com/iambunty_45?igshid=MzRlODBiNWFlZA==">
               <FiInstagram />
             </a>
           </li>

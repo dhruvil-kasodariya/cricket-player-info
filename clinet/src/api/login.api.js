@@ -3,6 +3,7 @@ import { signInSuccess, signInFailed } from "../store/user/user.action";
 import { toast } from "react-toastify";
 
 export const loginFetchApi = async (userData, dispatch, navigate) => {
+  console.log(userData)
   const data = await fetch(loginUrl, {
     method: "POST",
     headers: {
@@ -17,6 +18,7 @@ export const loginFetchApi = async (userData, dispatch, navigate) => {
         navigate("/home");
         return temp;
       }
+      console.log(temp)
       toast.error(temp.messege);
       dispatch(signInFailed(temp));
       return false;

@@ -71,8 +71,8 @@ const PlayerInfoCard = ({
                   <td>{playerBattingState.headers[3]}</td>
                 </tr>
 
-                {playerBattingState.values.map((state) => (
-                  <tr>
+                {playerBattingState.values.map((state,index) => (
+                  <tr key={index}>
                     <th>{state.values[0]}</th>
                     <td>{state.values[1]}</td>
                     <td>{state.values[2]}</td>
@@ -100,8 +100,8 @@ const PlayerInfoCard = ({
                   <td>{playerBowingState.headers[3]}</td>
                 </tr>
 
-                {playerBowingState.values.map((state) => (
-                  <tr>
+                {playerBowingState.values.map((state,index) => (
+                  <tr key={index}>
                     <th>{state.values[0]}</th>
                     <td>{state.values[1]}</td>
                     <td>{state.values[2]}</td>
